@@ -1,0 +1,78 @@
+
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    background-color: lightgrey;
+}
+
+body {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+/* svg */
+:root {
+    --_fill: #ffffff00;
+    --_stroke: black;
+}
+
+svg {
+    fill: var(--fill, transparent);
+    stroke: var(--stroke, black);
+    width: 90%;
+}
+
+.grid-container {
+    width: 50%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(2rem, 50px));
+    grid-auto-rows: 10px;
+    outline: 5px solid black;
+
+    & * {
+        width: 5rem;
+        border: 1px solid black;
+    }
+}
+
+
+.item-container {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(23.5%, 50px)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 2rem), 1fr));
+    grid-template-columns: repeat(auto-fit, min(2rem, 1fr));
+    grid-template-columns: repeat(auto-fill, 2rem);
+    grid-template-rows: repeat(auto-fill, minmax(2rem, 50px));
+
+    flex-wrap: wrap;
+    
+    outline: 1px solid red;
+    & .item {
+        max-height: 2rem;
+        max-width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        outline: 1px solid purple;
+        background-color: var(--_custom-bg, transparent);
+        --_custom-bg: var(--custom-item-bg);
+        border-radius: var(--base-border-radius);
+        overflow: hidden;
+        
+    }
+    }
+
